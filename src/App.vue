@@ -16,4 +16,7 @@
   text-align center
   color #2c3e50
   margin-top 60px
+img
+  max-width: 84px
+  margin-top: 24px
 </style>
