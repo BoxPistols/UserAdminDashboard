@@ -1,22 +1,25 @@
 import user from '../assets/user.json';
 <template>
   <div class="user-admin-dashboard">
-    <Table></Table>
+    <Search/>
+    <Table :users="users"/>    
   </div>
 </template>
 
 <script>
-let users = require('../assets/user.json')
+let setUserData = require('../assets/user.json')
 
 import Table from './Table'
+import Search from './Search'
 
 export default {
   name: 'UserAdminDashboard',
   components: {
-    Table
+    Table,
+    Search
   },
   data: () => ({
-    users: users
+    users: setUserData
   }),
 }
 
