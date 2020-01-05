@@ -3,7 +3,7 @@
     <table>
       <thead>
         <tr>
-          <th v-for="(val, index) in tableOrder" :key="index">{{ val }}</th>
+          <th v-for="(val, index) in tableOrder" :key="index"> {{ index }} {{ val }}</th>
         </tr>
       </thead>
       <tbody>
@@ -19,18 +19,19 @@
 </template>
 
 <script>
+
   export default {
     name: 'Table',
     props: ['data', 'searchTerm'],
     data: () => ({
       //tableOrder: ['name', 'picture', 'email']
-      tableOrder: ['name', 'tags[]', 'company', 'isActive']
+      tableOrder: ['name', 'eyeColor', 'company', 'isActive']
     }),
     computed: {
       computedData() {
         return this.data.filter(
           row =>
-          row.name.includes(this.searchTerm) || row.email.includes(this.searchTerm))
+          row.name.includes(this.searchTerm) || row.eyeColor.includes(this.searchTerm))
       }
     }
   }
