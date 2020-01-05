@@ -8,7 +8,10 @@
       </thead>
       <tbody>
         <tr v-for="(row, index) in computedData" :key="index">
-          <td v-for="(key, idx) in tableOrder" :key="idx">{{ row[key] }}</td>
+          <td v-for="(key, idx) in tableOrder" :key="idx">
+            <span v-if="key !== 'picture' ">{{ row[key] }}</span>
+            <img class="images" :src="row[key]" v-if="key === 'picture' "/>
+          </td>
         </tr>
       </tbody>
     </table>
