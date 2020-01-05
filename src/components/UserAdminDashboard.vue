@@ -2,12 +2,14 @@ import user from '../assets/user.json';
 <template>
   <div class="user-admin-dashboard">
     <Search v-model="searchTerm" />
-    <Table :data="users" :searchTerm="searchTerm"/>    
+    <Table :data="users2" :searchTerm="searchTerm"/>    
   </div>
 </template>
 
 <script>
 let setUserData = require('../assets/user.json')
+let setUserData2 = require('../assets/user2.json')
+
 
 import Table from './Table'
 import Search from './Search'
@@ -20,6 +22,7 @@ export default {
   },
   data: () => ({
     users: setUserData,
+    users2: setUserData2,
     searchTerm: ''
   }),
 }

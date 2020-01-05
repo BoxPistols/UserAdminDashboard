@@ -23,7 +23,8 @@
     name: 'Table',
     props: ['data', 'searchTerm'],
     data: () => ({
-      tableOrder: ['name', 'picture', 'email']
+      //tableOrder: ['name', 'picture', 'email']
+      tableOrder: ['name', 'tags[]', 'company', 'isActive']
     }),
     computed: {
       computedData() {
