@@ -1,7 +1,7 @@
 import user from '../assets/user.json';
 <template>
   <div class="user-admin-dashboard">
-    <Table>{users}</Table>
+    <Table></Table>
   </div>
 </template>
 
