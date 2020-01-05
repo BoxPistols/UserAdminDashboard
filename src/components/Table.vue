@@ -3,7 +3,7 @@
     <table>
       <thead>
         <tr>
-          <th v-for="(title, index) in tableOrder" :key="index">{{ title }}</th>
+          <th v-for="(val, index) in tableOrder" :key="index">{{ val }}</th>
         </tr>
       </thead>
       <tbody>

@@ -19,7 +19,8 @@ export default {
     Search
   },
   data: () => ({
-    users: setUserData
+    users: setUserData,
+    searchTerm: ''
   }),
 }
 
