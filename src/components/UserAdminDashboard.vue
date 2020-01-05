@@ -1,8 +1,8 @@
 import user from '../assets/user.json';
 <template>
   <div class="user-admin-dashboard">
-    <Search/>
-    <Table :users="users"/>    
+    <Search v-model="searchTerm" />
+    <Table :data="users" :searchTerm="searchTerm"/>    
   </div>
 </template>
 
@@ -41,5 +41,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 .user-admin-dashboard
-  width auto
+  width auto  
 </style>

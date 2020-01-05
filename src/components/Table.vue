@@ -3,37 +3,36 @@
     <table>
       <thead>
         <tr>
-          <th
-            v-for="(title, index) in tableOrder"
-            :key="index"
-          >{{ title }}</th>
+          <th v-for="(title, index) in tableOrder" :key="index">{{ title }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="(user, index) in users"
-          :key="index"
-        >
-          <td
-            v-for="(key, idx) in tableOrder"
-            :key="idx"
-          >{{ user[key] }}</td>
+        <tr v-for="(row, index) in computedData" :key="index">
+          <td v-for="(key, idx) in tableOrder" :key="idx">{{ row[key] }}</td>
         </tr>
       </tbody>
-    </table>    
+    </table>
   </div>
 </template>
 
 <script>
   export default {
     name: 'Table',
-    props: ['users'],
+    props: ['data', 'searchTerm'],
     data: () => ({
       tableOrder: ['name', 'picture', 'email']
-    })
+    }),
+    computed: {
+      computedData() {
+        return this.data.filter(
+          row =>
+          row.name.includes(this.searchTerm) || row.email.includes(this.searchTerm))
+      }
+    }
   }
 </script>
 
 <style scoped lang="stylus">
-  
+table
+  margin: auto
 </style>
